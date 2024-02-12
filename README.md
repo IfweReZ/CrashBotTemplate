@@ -1,3 +1,3 @@
 # CrashBotTemplate
 
-##Template for your crash bots.
+Template for your crash bots.
