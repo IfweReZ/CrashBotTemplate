@@ -20,12 +20,12 @@ os.system("title Crash Bot Console")
 
 
 def handler(signum, frame):
-    res = input("""What do you want to do?
+    res = input(Colorate.Vertical(Colors.rainbow, """What do you want to do?
 1) Exit
 2) Restart Bot
 3) Nothing
 
->>>""")
+>>>"""))
     if res == '1':
         exit(1)
     if res == '2':
