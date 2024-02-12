@@ -1,0 +1,6 @@
+disnake
+random2
+asyncio
+colorama
+alive_progress
+pystyle
