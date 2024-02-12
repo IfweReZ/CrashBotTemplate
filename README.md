@@ -1,3 +1,3 @@
-# CrashBotTemplate
+# CrashBoе Template
 
-Template for your crash bots.
+Простой шаблон для твоего краш бота в дискорде
