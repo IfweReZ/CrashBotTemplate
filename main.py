@@ -318,7 +318,7 @@ async def cc(inter):
     print(f"{Style.BRIGHT}{Fore.RESET}[{Fore.MAGENTA}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Creating Text And Voice Channels...{Fore.RESET}")
     for i in range(cfg.Settings.ChannelsAmount):
         try:
-            await inter.guild.create_text_channel(name=f"{cfg.Settings.TextChannelName}-{randstr(10)}", topic="by ifwerez")
+            await inter.guild.create_text_channel(name=f"{cfg.Settings.TextChannelName}-{randstr(10)}", topic=f"{cfg.Settings.ChannelTopic} | by ifwerez")
             await inter.guild.create_voice_channel(name=f"{cfg.Settings.VoiceChannelName} {randstr(10)}")
         except discord.errors.HTTPException:
             print(f"{Style.BRIGHT}{Fore.RESET}[{Fore.RED}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Rate Limited by Channels Creation{Fore.RESET}")
