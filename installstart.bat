@@ -5,5 +5,4 @@ cls
 echo Starting bot
 cls
 python main.py
-echo Bot stopped. exiting
-ping 3 > nul
+pause

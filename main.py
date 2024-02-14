@@ -143,7 +143,6 @@ async def on_guild_channel_create(channel):
             print(
                 f"{Style.BRIGHT}{Fore.RESET}[{Fore.RED}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Rate Limited by Channel Spam{Fore.RESET}")
 
-
 @bot.event
 async def on_guild_role_create(role):
     for i in role.guild.members:
@@ -187,11 +186,7 @@ async def scr(genid, guild):
 {Style.BRIGHT}{Fore.RESET}[{Fore.MAGENTA}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Ping: {Colorate.Horizontal(Colors.rainbow, text=str(int(bot.latency * 1000)))}{Fore.RESET}
 {Style.BRIGHT}{Fore.RESET}[{Fore.MAGENTA}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Used Gen ID! new Gen ID: {Colorate.Horizontal(Colors.rainbow, text=generatengid())}{Fore.RESET}
 
-{Style.BRIGHT}{Fore.RESET}[{Fore.RED}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Thank You For Using Mine Crash Bot Template️ | Made by IfweReZ.{Fore.RESET}
-{Style.BRIGHT}{Fore.RESET}[{Fore.RED}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Exiting in 5 seconds.{Fore.RESET}
-""")
-        time.sleep(5)
-        quit()
+{Style.BRIGHT}{Fore.RESET}[{Fore.RED}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Thank You For Using Mine Crash Bot Template | Made by IfweReZ.{Fore.RESET}""")
 
 
 @bot.slash_command(description="Информация о сервере🤡")
@@ -318,17 +313,17 @@ async def cc(inter):
     print(f"{Style.BRIGHT}{Fore.RESET}[{Fore.MAGENTA}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Creating Text And Voice Channels...{Fore.RESET}")
     for i in range(cfg.Settings.ChannelsAmount):
         try:
-            await inter.guild.create_text_channel(name=f"{cfg.Settings.TextChannelName}-{randstr(10)}", topic=f"{cfg.Settings.ChannelTopic} | by ifwerez")
+            await inter.guild.create_text_channel(name=f"{cfg.Settings.TextChannelName}-{randstr(10)}", topic="by ifwerez")
             await inter.guild.create_voice_channel(name=f"{cfg.Settings.VoiceChannelName} {randstr(10)}")
         except discord.errors.HTTPException:
             print(f"{Style.BRIGHT}{Fore.RESET}[{Fore.RED}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Rate Limited by Channels Creation{Fore.RESET}")
     now = datetime.now()
     print(f"{Style.BRIGHT}{Fore.RESET}[{Fore.GREEN}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Text And Voice Channels Created{Fore.RESET}")
-    asyncio.create_task(scr(genid2, inter.guild))
 
 
 @bot.slash_command(description="Создаёт Роли😍")
 async def cr(inter):
+    global genid2
     await inter.send("Создаю Роли и Выдаю Всем", ephemeral=True)
     now = datetime.now()
     print(
@@ -343,6 +338,7 @@ async def cr(inter):
     now = datetime.now()
     print(
         f"{Style.BRIGHT}{Fore.RESET}[{Fore.GREEN}{now.strftime('%H:%M:%S.%f')[:-3]}{Fore.RESET}] Created Roles{Fore.RESET}")
+    asyncio.create_task(scr(genid2, inter.guild))
 
 
 @bot.slash_command(description="Изменяет Имена Участникам😘")
